@@ -10,7 +10,7 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-     var data = intent.extras?.getString("un")
-        textViewData.setText(data)
+    /* var data = intent.extras?.getString("un")
+        textViewData.setText(data)*/
     }
 }

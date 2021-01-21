@@ -1,6 +1,7 @@
 package com.example.saproject3
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
                 textViewResult.setText(userName)
 
                 // Intents  -- explict and implicit
+                // explicit Intent -- you explicitly define which activity u have to go
 
                 var i = Intent(this,SecondActivity::class.java)  // Explicit Intent
 
@@ -27,5 +29,15 @@ class MainActivity : AppCompatActivity() {
 
 
             }
+
+        buttonImpicit.setOnClickListener {
+
+        /*    var myIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:898828282"))
+            startActivity(myIntent)*/
+
+            var myIntent = Intent("Intent.ACTION_VIEW", Uri.parse("https://www.globalknowledge.com/"))
+            startActivity(myIntent)
+
+        }
     }
 }
