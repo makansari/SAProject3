@@ -5,6 +5,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -44,7 +46,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onStart() {
         super.onStart()
         Log.e("mytag","Activity onStart")
@@ -78,4 +79,25 @@ class MainActivity : AppCompatActivity() {
         Log.i("mytag","Activity onDestroy")
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.mymenu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+                 var id = item.itemId
+        if(id==R.id.settingid){
+            Toast.makeText(this, "USER SELECTED SETTINGS ", Toast.LENGTH_SHORT).show()
+        }
+        if(id == R.id.logoutid){
+            Toast.makeText(this, "USER SELECTED Logout ", Toast.LENGTH_SHORT).show()
+
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+
 }
