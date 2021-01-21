@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,6 +12,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.i("mytag","Activity Oncreated")
 
             buttonSubmit.setOnClickListener {
 
@@ -35,9 +38,44 @@ class MainActivity : AppCompatActivity() {
         /*    var myIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:898828282"))
             startActivity(myIntent)*/
 
-            var myIntent = Intent("Intent.ACTION_VIEW", Uri.parse("https://www.globalknowledge.com/"))
+            var myIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.globalknowledge.com/"))
             startActivity(myIntent)
 
         }
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("mytag","Activity onStart")
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.w("mytag","Activity onResume")
+
+        Log.v("mytag","checking for verbose")
+
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("mytag","Activity Pause")
+
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("mytag","Activity onStop")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("mytag","Activity onDestroy")
+
     }
 }
